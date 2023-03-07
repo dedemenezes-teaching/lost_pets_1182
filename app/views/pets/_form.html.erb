@@ -1,0 +1,17 @@
+<%= form_with model: pet do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+  <%= f.label :found_on %>
+  <%= f.date_field :found_on %>
+  <%= f.label :species %>
+  <%= f.select :species, collection: ['dog', 'hipo', 'elephant', 'mouse']  %>
+  <%= f.submit %>
+<% end %>
+
+<% if pet.id.nil? %>
+  <%= link_to 'Cancel', pets_path %>
+<% else %>
+  <%= link_to 'Cancel', pet_path(pet) %>
+<% end %>
